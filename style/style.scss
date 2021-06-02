@@ -33,11 +33,14 @@ body {
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
-
-        &:first-of-type {
-          opacity: 1;
-        }
+        transition: opacity 0.5s;
       }
+
+      //把第一張圖調回不透明
+      & li:first-of-type img {
+        opacity: 1;
+      }
+
       .btn {
         position: absolute;
         cursor: pointer;

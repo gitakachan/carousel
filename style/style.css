@@ -44,9 +44,11 @@ body .carousel .imgList img {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
-body .carousel .imgList img:first-of-type {
+body .carousel .imgList li:first-of-type img {
   opacity: 1;
 }
 
