@@ -1,8 +1,11 @@
 let imgList = document.querySelectorAll(".img img");
+let next = document.querySelector(".next");
+let prev = document.querySelector(".prev");
+let circles = document.querySelectorAll(".circle");
+
+let i = 0; //目前顯示圖片的索引(index of imgList)
 
 //next btn
-let i = 0;
-let next = document.querySelector(".next");
 next.addEventListener("click", () => {
   i++;
   if (i > imgList.length - 1) {
@@ -13,7 +16,6 @@ next.addEventListener("click", () => {
 });
 
 //prev btn
-let prev = document.querySelector(".prev");
 prev.addEventListener("click", () => {
   i--;
   if (i < 0) {
@@ -24,14 +26,12 @@ prev.addEventListener("click", () => {
 });
 
 //click circle button
-let circles = document.querySelectorAll(".circle");
 circles.forEach((el, idx) => {
   el.addEventListener("click", () => {
     i = idx;
     setOpacity();
   });
 });
-
 
 function setOpacity() {
   imgList.forEach((el, idx) => {
@@ -42,3 +42,4 @@ function setOpacity() {
     }
   });
 }
+
