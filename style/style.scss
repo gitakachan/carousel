@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+
+  .carousel {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .imgList {
+      width: 600px;
+      margin: 40px;
+      position: relative;
+      height: 400px;
+      background-color: rgb(0, 0, 0);
+
+      img {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+
+        &:first-of-type {
+          opacity: 1;
+        }
+      }
+      .btn {
+        position: absolute;
+        cursor: pointer;
+        background-color: rgba(218, 216, 216, 0.5);
+        color: #fff;
+        border: none;
+        width: 25px;
+        height: 50px;
+        border-radius: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.2s;
+        &:hover {
+          background-color: rgba(233, 233, 233, 0.8);
+        }
+
+        &.prev {
+          left: 3%;
+        }
+
+        &.next {
+          right: 3%;
+        }
+      }
+    }
+
+    .changeTo {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      align-items: stretch;
+
+      .circle {
+        width: 15px;
+        height: 15px;
+        background-color: rgba(218, 216, 216, 0.5);
+        margin: 20px;
+        border-radius: 50%;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          background-color: rgba(233, 233, 233, 0.8);
+          transition: background-color 0.2s;
+        }
+      }
+    }
+  }
+}
