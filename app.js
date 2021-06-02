@@ -9,13 +9,7 @@ next.addEventListener("click", () => {
     i = 0;
   }
   console.log(i);
-  imgList.forEach((el, idx) => {
-    if (idx != i) {
-      el.style.opacity = "0";
-    } else {
-      el.style.opacity = "1";
-    }
-  });
+  setOpacity();
 });
 
 //prev btn
@@ -26,13 +20,7 @@ prev.addEventListener("click", () => {
     i = 3;
   }
   console.log(i);
-  imgList.forEach((el, idx) => {
-    if (idx != i) {
-      el.style.opacity = "0";
-    } else {
-      el.style.opacity = "1";
-    }
-  });
+  setOpacity();
 });
 
 //click circle button
@@ -40,16 +28,17 @@ let circles = document.querySelectorAll(".circle");
 circles.forEach((el, idx) => {
   el.addEventListener("click", () => {
     i = idx;
-    imgList.forEach((el, idx) => {
-      if (idx != i) {
-        el.style.opacity = "0";
-      } else {
-        el.style.opacity = "1";
-      }
-    });
+    setOpacity();
   });
 });
 
-// function opacity() {
 
-// }
+function setOpacity() {
+  imgList.forEach((el, idx) => {
+    if (idx != i) {
+      el.style.opacity = "0";
+    } else {
+      el.style.opacity = "1";
+    }
+  });
+}
