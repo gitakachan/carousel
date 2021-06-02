@@ -1,5 +1,4 @@
 let imgList = document.querySelectorAll(".img img");
-//console.log(imgList);
 
 //next btn
 let i = 0;
@@ -36,7 +35,21 @@ prev.addEventListener("click", () => {
   });
 });
 
-// function changeTo () {  }
+//click circle button
+let circles = document.querySelectorAll(".circle");
+circles.forEach((el, idx) => {
+  el.addEventListener("click", () => {
+    i = idx;
+    imgList.forEach((el, idx) => {
+      if (idx != i) {
+        el.style.opacity = "0";
+      } else {
+        el.style.opacity = "1";
+      }
+    });
+  });
+});
+
 // function opacity() {
 
 // }
